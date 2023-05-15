@@ -1,12 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace Cuflix.Models
+namespace Cuflix.Models;
+
+public class Genre
 {
-    public class Genre
-    {
-        
-    }
+    [Key] // Define a propriedade como chave primária
+    public byte Id { get; set; }
+
+    [Required] // Requerido - Not Null; Validação
+    [StringLength(30)] // Tamanho máximo da propriedade
+    public string Name { get; set; }
 }
